@@ -4,10 +4,6 @@ const splashTapHint = document.getElementById("splash-tap-hint");
 const splashNames = document.getElementById("splash-names");
 const appContainer = document.getElementById("app");
 const curtainVideo = document.getElementById("curtain-video");
-const rsvpForm = document.getElementById("rsvp-form");
-
-// WhatsApp number from original invitation
-const WHATSAPP_PHONE = "919645244441"; 
 
 // 1. Splash Screen Curtain Video & Fading Names Transition (Tapping Screen)
 splash.addEventListener("click", () => {
@@ -89,34 +85,3 @@ const obs = new IntersectionObserver(e => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-/* ══ RSVP WhatsApp Submission ══ */
-if (rsvpForm) {
-  rsvpForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const guests = document.getElementById("guests").value;
-    const attendance = document.querySelector('input[name="attendance"]:checked').value;
-
-    if (!name) {
-      alert("Please enter your name.");
-      document.getElementById("name").focus();
-      return;
-    }
-
-    const statusIcon = attendance === "Joyfully Accepts" ? "🎉" : "✉️";
-    const guestPlural = guests === "1" ? "person" : "people";
-
-    // Construct Anas & Ansila's RSVP Message
-    const text = `Assalamu Alaikum! I would like to RSVP for Anas & Ansila's wedding on July 9, 2026.\n\n` +
-                 `*Name:* ${name}\n` +
-                 `*Attendance:* ${statusIcon} ${attendance}\n` +
-                 `*Guests:* ${guests} ${guestPlural}\n\n` +
-                 `Looking forward to celebrating this blessed union!`;
-
-    const encodedText = encodeURIComponent(text);
-    const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedText}`;
-
-    window.open(whatsappUrl, "_blank");
-  });
-}
