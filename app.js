@@ -35,6 +35,9 @@ splash.addEventListener("click", () => {
     
     // Reveal the main invitation card beneath
     appContainer.classList.remove("hidden");
+    setTimeout(() => {
+      appContainer.classList.add("fade-in");
+    }, 50);
     document.body.classList.remove("no-scroll");
     
     // Completely remove the splash from layout and pause resources after transition finishes
