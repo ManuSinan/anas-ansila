@@ -10,22 +10,27 @@
   <meta property="og:url" content="https://github.com/ManuSinan/anas-ansila">
   <meta property="og:title" content="Anas & Ansila — Wedding Invitation">
   <meta property="og:description" content="Wedding Invitation — Celebrate the union of Anas & Ansila on July 9, 2026">
-  <meta property="og:image" content="wedding-card.jpg">
+  <meta property="og:image" content="assets/images/venue.jpg">
   
   <!-- Twitter Meta Tags -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://github.com/ManuSinan/anas-ansila">
   <meta property="twitter:title" content="Anas & Ansila — Wedding Invitation">
   <meta property="twitter:description" content="Wedding Invitation — Celebrate the union of Anas & Ansila on July 9, 2026">
-  <meta property="twitter:image" content="wedding-card.jpg">
+  <meta property="twitter:image" content="assets/images/venue.jpg">
 
   <title>Anas & Ansila · Wedding Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Amiri:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="no-scroll">
+
+  <!-- Floating Audio Element -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-memories-142.mp3" type="audio/mp3">
+  </audio>
 
   <!-- Video Curtain Screen Overlay -->
   <div id="splash" class="splash-screen">
@@ -42,7 +47,6 @@
     </div>
 
     <div class="splash-content">
-
       <!-- Fading Names Container (Styled exactly like the curtain center) -->
       <div id="splash-names" class="splash-names-fade">
         <!-- Top Scroll Divider Ornament -->
@@ -92,33 +96,162 @@
 
   <!-- Main Website Container -->
   <div id="app" class="app-container hidden">
+
+    <!-- Floating Navigation Controls -->
+    <div class="nav-controls">
+      <button class="nav-btn menu-btn" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+      <button class="nav-btn music-btn" id="music-toggle" aria-label="Toggle Music">
+        <svg id="music-icon-playing" class="music-icon animate-spin" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+          <path d="M9 18V5l12-2v13"></path>
+          <circle cx="6" cy="18" r="3"></circle>
+          <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+      </button>
+    </div>
+
     <!-- Hero Section -->
     <section id="hero">
-      <figure class="hero-poster">
-        <div class="hero-card-wrapper">
-          <img
-            src="assets/images/wedding-card.jpg"
-            alt="Wedding invitation for Anas & Ansila — July 9, 2026 at Wedland Convention Centre"
-            class="hero-poster__img"
-            width="1023"
-            height="1537"
-            decoding="async"
-            fetchpriority="high"
-          >
-          <button
-            type="button"
-            class="hero-poster__discover"
-            aria-label="Scroll to event details"
-            onclick="document.getElementById('countdown').scrollIntoView({behavior:'smooth'})"
-          ></button>
+      <!-- Hanging Lanterns -->
+      <div class="hero-lantern hero-lantern--left">
+        <svg class="hero-lantern__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 130">
+          <line x1="31" y1="0" x2="31" y2="16" stroke="#c5a86a" stroke-width="1.5"/>
+          <rect x="24" y="10" width="14" height="7" rx="2" fill="url(#lg)"/>
+          <path d="M18 24 Q31 17 44 24" stroke="#c5a86a" stroke-width="1.2" fill="url(#lg)"/>
+          <rect x="24" y="23" width="14" height="3" rx="0.5" fill="url(#lg)"/>
+          <path d="M16 28 Q31 22 46 28 L50 88 Q31 96 12 88 Z" fill="url(#lb)" opacity="0.92"/>
+          <ellipse cx="31" cy="58" rx="10" ry="14" fill="#ffe870" opacity="0.35"/>
+          <ellipse cx="31" cy="58" rx="5" ry="7" fill="#fff5a0" opacity="0.55"/>
+          <ellipse cx="31" cy="88" rx="19" ry="6" fill="url(#lg)"/>
+          <rect x="23" y="88" width="16" height="9" rx="2" fill="url(#lg)"/>
+          <path d="M25 97 Q31 107 37 97" stroke="#c5a86a" stroke-width="1.2" fill="none"/>
+          <line x1="28" y1="107" x2="28" y2="118" stroke="#c5a86a" stroke-width="0.8"/>
+          <line x1="31" y1="107" x2="31" y2="120" stroke="#c5a86a" stroke-width="0.8"/>
+          <line x1="34" y1="107" x2="34" y2="118" stroke="#c5a86a" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="hero-lantern hero-lantern--right">
+        <svg class="hero-lantern__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 130">
+          <line x1="31" y1="0" x2="31" y2="16" stroke="#c5a86a" stroke-width="1.5"/>
+          <rect x="24" y="10" width="14" height="7" rx="2" fill="url(#lg)"/>
+          <path d="M18 24 Q31 17 44 24" stroke="#c5a86a" stroke-width="1.2" fill="url(#lg)"/>
+          <rect x="24" y="23" width="14" height="3" rx="0.5" fill="url(#lg)"/>
+          <path d="M16 28 Q31 22 46 28 L50 88 Q31 96 12 88 Z" fill="url(#lb)" opacity="0.92"/>
+          <ellipse cx="31" cy="58" rx="10" ry="14" fill="#ffe870" opacity="0.35"/>
+          <ellipse cx="31" cy="58" rx="5" ry="7" fill="#fff5a0" opacity="0.55"/>
+          <ellipse cx="31" cy="88" rx="19" ry="6" fill="url(#lg)"/>
+          <rect x="23" y="88" width="16" height="9" rx="2" fill="url(#lg)"/>
+          <path d="M25 97 Q31 107 37 97" stroke="#c5a86a" stroke-width="1.2" fill="none"/>
+          <line x1="28" y1="107" x2="28" y2="118" stroke="#c5a86a" stroke-width="0.8"/>
+          <line x1="31" y1="107" x2="31" y2="120" stroke="#c5a86a" stroke-width="0.8"/>
+          <line x1="34" y1="107" x2="34" y2="118" stroke="#c5a86a" stroke-width="0.8"/>
+        </svg>
+      </div>
+
+      <!-- Pointed Dome Framing Arch -->
+      <div class="hero-card-frame">
+        <svg class="arch-border-svg" viewBox="0 0 360 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer pointed arch -->
+          <path d="M15,620 L15,140 C15,90 90,40 180,20 C270,40 345,90 345,140 L345,620" stroke="url(#goldGrad)" stroke-width="1.5" />
+          <!-- Inner dotted arch -->
+          <path d="M22,620 L22,143 C22,96 93,48 180,28 C267,48 338,96 338,143 L338,620" stroke="url(#goldGrad)" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.7" />
+          <!-- Top floral ornament -->
+          <path d="M180,10 L180,20 M175,15 L185,15" stroke="url(#goldGrad)" stroke-width="1" />
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ab8e48" />
+              <stop offset="50%" stop-color="#ebd6a4" />
+              <stop offset="100%" stop-color="#ab8e48" />
+            </linearGradient>
+            <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#8a6520"/>
+              <stop offset="40%" stop-color="#e2c060"/>
+              <stop offset="70%" stop-color="#c9a84c"/>
+              <stop offset="100%" stop-color="#7a5518"/>
+            </linearGradient>
+            <linearGradient id="lb" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7a5518" stop-opacity="0.8"/>
+              <stop offset="30%" stop-color="#d4aa4a" stop-opacity="0.7"/>
+              <stop offset="60%" stop-color="#e8cc78" stop-opacity="0.75"/>
+              <stop offset="100%" stop-color="#6a4510" stop-opacity="0.8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <!-- Bismillah Calligraphy -->
+        <div class="cl-bism">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+        
+        <p class="hero-eyebrow">TOGETHER WITH THEIR FAMILIES</p>
+
+        <!-- Names Section -->
+        <div class="hero-names-wrap">
+          <h1 class="hero-name-text">ANAS</h1>
+          <div class="hero-amp-container">
+            <svg class="hero-amp-svg" viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10,12 C20,9 25,17 35,12" stroke="url(#goldGrad)" stroke-width="0.75"/>
+              <path d="M10,12 C10,9 12,9 13,12 C13,15 10,15 10,12 Z" stroke="url(#goldGrad)" stroke-width="0.75"/>
+              <text x="50" y="18" font-family="'Great Vibes', cursive" font-size="22" fill="url(#goldGrad)" text-anchor="middle">&</text>
+              <path d="M65,12 C75,17 80,9 90,12" stroke="url(#goldGrad)" stroke-width="0.75"/>
+              <path d="M90,12 C90,15 88,15 87,12 C87,9 90,9 90,12 Z" stroke="url(#goldGrad)" stroke-width="0.75"/>
+            </svg>
+          </div>
+          <h1 class="hero-name-text">ANSILA</h1>
         </div>
-      </figure>
+
+        <!-- Middle Divider ornament -->
+        <svg class="splash-ornament splash-mid" viewBox="0 0 100 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 100px; margin-top: 0.5rem;">
+          <path d="M10,6 L40,6" stroke="#c5a86a" stroke-width="0.75"/>
+          <path d="M60,6 L90,6" stroke="#c5a86a" stroke-width="0.75"/>
+          <circle cx="50" cy="6" r="2" fill="#c5a86a"/>
+          <circle cx="44" cy="6" r="1.5" fill="#c5a86a"/>
+          <circle cx="56" cy="6" r="1.5" fill="#c5a86a"/>
+        </svg>
+
+        <p class="hero-subtitle">WE REQUEST THE HONOUR OF YOUR PRESENCE<br>AT THE NIKKAH CEREMONY</p>
+
+        <!-- Date Card Badge -->
+        <div class="hero-date-card">
+          <div class="badge-col">
+            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span class="badge-label">THURSDAY</span>
+          </div>
+          <div class="badge-col divider-left">
+            <span class="date-num">9</span>
+            <span class="date-month">JULY</span>
+            <span class="date-year">2026</span>
+          </div>
+          <div class="badge-col divider-left">
+            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span class="badge-label">11:30 AM</span>
+          </div>
+        </div>
+
+        <!-- Scroll Explore Indicator -->
+        <div class="scroll-explore">
+          <div class="mouse-icon">
+            <div class="mouse-wheel"></div>
+          </div>
+          <span class="explore-text">SCROLL TO EXPLORE</span>
+        </div>
+      </div>
     </section>
 
     <!-- Countdown Section -->
     <section id="countdown">
-      <p class="cd-eyebrow">COUNTING DOWN TO OUR BIG DAY</p>
-      <div class="cd-script">Together Forever</div>
+      <p class="cd-eyebrow">✦ COUNTING DOWN TO OUR BIG DAY ✦</p>
       <div class="countdown-grid">
         <div class="cd-item"><span class="cd-num" id="cd-days">00</span><span class="cd-unit">DAYS</span></div>
         <div class="cd-item"><span class="cd-num" id="cd-hours">00</span><span class="cd-unit">HOURS</span></div>
@@ -128,106 +261,165 @@
       <div class="cd-stars">✦ ✦ ✦</div>
     </section>
 
-    <!-- Details Section -->
-    <section id="details">
+    <!-- Timeline Section -->
+    <section id="schedule" class="reveal">
       <div class="sec-hd">
-        <p class="sec-eye reveal">THE OCCASION</p>
-        <h2 class="sec-ttl reveal rd1">Event Details</h2>
-        <div class="sec-orn reveal rd2"><span class="ol"></span><span class="od"></span><span class="ol"></span></div>
+        <p class="sec-eye">EVENT TIMELINE</p>
+        <div class="sec-orn"><span class="ol"></span><span class="od"></span><span class="ol"></span></div>
       </div>
-      <div class="details-card reveal">
-        <article class="detail-item reveal rd1">
-          <div class="detail-icon">
-            <img src="assets/svg/icon-date.svg" width="22" height="22" alt="">
+      
+      <div class="timeline">
+        <div class="timeline-item reveal rd1">
+          <div class="timeline-dot-icon">
+            <svg class="timeline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2v4M8 11c0-3 1-5 4-5s4 2 4 5v8H8v-8z" />
+              <path d="M6 19h12v3H6zM4 14v5M20 14v5" />
+            </svg>
           </div>
-          <div class="detail-body">
-            <span class="detail-label">Date</span>
-            <p class="detail-value">Thursday, 9th July 2026</p>
+          <div class="timeline-content">
+            <h3>NIKKAH</h3>
+            <p class="timeline-time">🕒 11:30 AM ONWARDS</p>
           </div>
-        </article>
-        <article class="detail-item reveal rd2">
-          <div class="detail-icon">
-            <img src="assets/svg/icon-time.svg" width="22" height="22" alt="">
+        </div>
+
+        <div class="timeline-item reveal rd2">
+          <div class="timeline-dot-icon">
+            <svg class="timeline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="5" />
+              <path d="M5 7v10M19 7v10M9 12h6" />
+            </svg>
           </div>
-          <div class="detail-body">
-            <span class="detail-label">Time</span>
-            <p class="detail-value">11:30 AM onwards</p>
+          <div class="timeline-content">
+            <h3>LUNCH</h3>
+            <p class="timeline-time">🕒 01:00 PM ONWARDS</p>
           </div>
-        </article>
-        <article class="detail-item reveal rd3">
-          <div class="detail-icon">
-            <img src="assets/svg/icon-ceremony.svg" width="22" height="22" alt="">
+        </div>
+
+        <div class="timeline-item reveal rd3">
+          <div class="timeline-dot-icon">
+            <svg class="timeline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v2" />
+              <circle cx="8" cy="7" r="3" />
+              <path d="M23 21v-2a3 3 0 0 0-3-3M16 3.13a3 3 0 0 1 0 5.75" />
+            </svg>
           </div>
-          <div class="detail-body">
-            <span class="detail-label">Ceremony</span>
-            <p class="detail-value">Nikkah</p>
+          <div class="timeline-content">
+            <h3>RECEPTION</h3>
+            <p class="timeline-time">🕒 02:30 PM ONWARDS</p>
           </div>
-        </article>
-        <article class="detail-item detail-item--last reveal rd4">
-          <div class="detail-icon">
-            <img src="assets/svg/icon-venue.svg" width="22" height="22" alt="">
-          </div>
-          <div class="detail-body">
-            <span class="detail-label">Venue</span>
-            <p class="detail-value">Wedland Convention Centre</p>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
 
     <!-- Venue Section -->
-    <section id="venue">
+    <section id="venue" class="reveal">
       <div class="sec-hd">
-        <p class="sec-eye reveal">FIND YOUR WAY</p>
-        <h2 class="sec-ttl reveal rd1">Venue</h2>
-        <div class="sec-orn reveal rd2"><span class="ol"></span><span class="od"></span><span class="ol"></span></div>
+        <p class="sec-eye">VENUE</p>
+        <div class="sec-orn"><span class="ol"></span><span class="od"></span><span class="ol"></span></div>
       </div>
-      <p class="vname reveal">Wedland Convention Centre<span class="vname-sub">Mavoor-Medical College Road, Peruvayal, Kozhikode, Kerala 673008</span></p>
-      <div class="map-box reveal">
-        <iframe src="https://maps.google.com/maps?q=Wedland%20Convention%20Centre,%20Peruvayal,%20Kozhikode,%20Kerala&output=embed" allowfullscreen="" loading="lazy" title="Venue map"></iframe>
-      </div>
-      <a class="map-btn reveal" href="https://www.google.com/maps/dir/?api=1&destination=Wedland+Convention+Centre+Peruvayal+Kozhikode" target="_blank" rel="noopener">
-        📍 &nbsp;GET DIRECTIONS ON GOOGLE MAPS
-      </a>
-      <a class="map-btn reveal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Anas+%26+Ansila+Wedding+Nikkah&dates=20260709T060000Z/20260709T100000Z&details=Nikkah+ceremony+of+Anas+and+Ansila+at+Wedland+Convention+Centre%2C+Peruvayal.&location=Wedland+Convention+Centre%2C+Peruvayal%2C+Kozhikode" target="_blank" rel="noopener" style="margin-top: 0.6rem;">
-        📅 &nbsp;ADD TO GOOGLE CALENDAR
-      </a>
-    </section>
-
-    <!-- Closing Section -->
-    <section id="closing">
-      <p class="cl-bism reveal">﷽</p>
-      <p class="cl-ayah reveal">"And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy."</p>
-      <p class="cl-cite reveal">— Quran 30:21</p>
-
-      <img class="cl-arch reveal" src="assets/svg/arch-ornament.svg" width="100" height="38" alt="">
-
-      <div class="cl-script reveal">Anas <span class="cl-amp">&amp;</span> Ansila</div>
-      <p class="cl-sub reveal">TOGETHER WITH OUR FAMILIES</p>
-      <p class="cl-body reveal">
-        Joyfully invite you to witness<br>
-        the blessed union of our Nikkah.<br><br>
-        Your presence, heartfelt prayers &amp;<br>
-        warm blessings are the greatest gift<br>
-        you could bring to this beautiful day.<br><br>
-        <strong>Thursday, 9th July 2026</strong><br>
-        <strong>11:30 AM · Wedland Convention Centre</strong>
-      </p>
-
-      <div class="dua-box reveal">
-        <p>
-          May Allah bless this sacred union<br>
-          with boundless love, mercy,<br>
-          and eternal happiness.
-          <span class="dua-aameen">Aameen.</span>
-        </p>
+      
+      <div class="venue-card">
+        <img src="assets/images/venue.jpg" alt="Wedland Convention Centre" class="venue-img">
+        <div class="venue-info">
+          <h3>WEDLAND CONVENTION CENTRE</h3>
+          <p class="venue-address">
+            <svg class="pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Mavoor-Medical College Road, Peruvayal, Kozhikode, Kerala 673008
+          </p>
+        </div>
+        
+        <div class="map-box">
+          <iframe src="https://maps.google.com/maps?q=Wedland%20Convention%20Centre,%20Peruvayal,%20Kozhikode,%20Kerala&output=embed" allowfullscreen="" loading="lazy" title="Venue map"></iframe>
+        </div>
+        
+        <div class="venue-actions">
+          <a class="btn-venue-action btn-gold" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Anas+%26+Ansila+Wedding+Nikkah&dates=20260709T060000Z/20260709T100000Z&details=Nikkah+ceremony+of+Anas+and+Ansila+at+Wedland+Convention+Centre%2C+Peruvayal.&location=Wedland+Convention+Centre%2C+Peruvayal%2C+Kozhikode" target="_blank" rel="noopener">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            ADD TO CALENDAR
+          </a>
+          <a class="btn-venue-action btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Wedland+Convention+Centre+Peruvayal+Kozhikode" target="_blank" rel="noopener">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            GET DIRECTIONS
+          </a>
+        </div>
       </div>
     </section>
 
+    <!-- RSVP Section -->
+    <section id="rsvp" class="reveal">
+      <div class="sec-hd">
+        <p class="sec-eye">KINDLY RSVP</p>
+        <div class="sec-orn"><span class="ol"></span><span class="od"></span><span class="ol"></span></div>
+      </div>
+      
+      <div class="rsvp-card">
+        <p class="rsvp-intro">Please confirm your attendance before June 25, 2026. Confirming via WhatsApp helps us plan the perfect day.</p>
+        
+        <div class="form-group name-group">
+          <div class="input-icon-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <input type="text" id="rsvp-name" placeholder="Your Name" required>
+          </div>
+        </div>
+
+        <div class="rsvp-submit-actions">
+          <button type="button" class="btn-rsvp-submit btn-gold" id="btn-accept-submit">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            I'LL BE THERE
+          </button>
+          <button type="button" class="btn-rsvp-submit btn-outline" id="btn-decline-submit">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            CAN'T MAKE IT
+          </button>
+        </div>
+
+        <div class="guest-selector-row">
+          <span class="guest-selector-label">
+            <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+            </svg>
+            NO. OF GUESTS
+          </span>
+          <div class="selector-controls">
+            <button type="button" class="ctrl-btn" id="btn-minus">—</button>
+            <span class="ctrl-num" id="guest-count">02</span>
+            <button type="button" class="ctrl-btn" id="btn-plus">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer Section -->
     <footer>
-      <p>🤍 &nbsp; ANAS &amp; ANSILA &nbsp; 🤍<br>NIKKAH · THURSDAY 9 JULY 2026<br>WEDLAND CONVENTION CENTRE, PERUVAYAL</p>
+      <div class="footer-badge">
+        <div class="footer-badge-inner">A<span>|</span>A</div>
+      </div>
+      <p class="footer-thankyou">THANK YOU FOR BEING PART OF OUR SPECIAL DAY</p>
+      <div class="footer-heart">
+        <svg class="heart-svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
     </footer>
   </div>
 
