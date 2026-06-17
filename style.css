@@ -32,13 +32,14 @@ body.no-scroll {
   overflow: hidden;
 }
 
-/* ══════════════════════════════════
-   HERO — invitation artwork
-   ══════════════════════════════════ */
 #hero {
   position: relative;
   background: var(--ivory);
   line-height: 0;
+  padding: 1rem 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-poster {
@@ -46,6 +47,21 @@ body.no-scroll {
   margin: 0;
   width: 100%;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: opacity 1.8s var(--ease-premium), transform 1.8s var(--ease-premium);
+}
+
+.app-container.fade-in .hero-poster {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.hero-card-wrapper {
+  position: relative;
+  width: 100%;
+  animation: cardFloat 6s ease-in-out infinite;
+  animation-delay: 1.8s; /* Wait for entry transition to complete */
 }
 
 .hero-poster__img {
@@ -53,6 +69,25 @@ body.no-scroll {
   width: 100%;
   height: auto;
   vertical-align: top;
+  border-radius: 12px;
+  border: 1px solid rgba(175, 143, 86, 0.35);
+  box-shadow: 0 10px 30px rgba(42, 31, 14, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.hero-poster__img:hover {
+  box-shadow: 0 15px 35px rgba(175, 143, 86, 0.3);
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 10px 30px rgba(42, 31, 14, 0.1);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 38px rgba(42, 31, 14, 0.14), 0 0 15px rgba(175, 143, 86, 0.15);
+  }
 }
 
 .hero-poster__discover {
