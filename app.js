@@ -110,3 +110,87 @@ const obs = new IntersectionObserver(e => {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ══ Animated Live Wallpaper Canvas Background ══
+(function() {
+  const canvas = document.getElementById('bg-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
+  }
+  
+  window.addEventListener('resize', resize);
+  resize();
+  
+  class WaveLayer {
+    constructor(yPercent, length, amplitude, speed, colors) {
+      this.yPercent = yPercent;
+      this.length = length;
+      this.amplitude = amplitude;
+      this.speed = speed;
+      this.colors = colors;
+      this.phase = Math.random() * 100;
+    }
+    
+    update() {
+      this.phase += this.speed;
+    }
+    
+    draw(ctx, w, h) {
+      const centerY = h * this.yPercent;
+      ctx.beginPath();
+      ctx.moveTo(0, h);
+      
+      for (let x = 0; x <= w; x += 4) {
+        const angle = x * this.length + this.phase;
+        const y = centerY + Math.sin(angle) * this.amplitude + Math.cos(angle * 0.6) * (this.amplitude * 0.4);
+        ctx.lineTo(x, y);
+      }
+      
+      ctx.lineTo(w, h);
+      ctx.lineTo(0, h);
+      ctx.closePath();
+      
+      const grad = ctx.createLinearGradient(0, centerY - this.amplitude * 1.5, 0, h);
+      grad.addColorStop(0, this.colors[0]);
+      grad.addColorStop(1, this.colors[1]);
+      
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+  }
+  
+  const waves = [
+    new WaveLayer(0.60, 0.003, 30, 0.006, ['rgba(235, 214, 164, 0.15)', 'rgba(250, 246, 238, 0.05)']),
+    new WaveLayer(0.70, 0.004, 24, 0.008, ['rgba(255, 255, 255, 0.4)', 'rgba(250, 246, 238, 0.1)']),
+    new WaveLayer(0.80, 0.005, 18, 0.010, ['rgba(175, 146, 93, 0.15)', 'rgba(235, 214, 164, 0.03)'])
+  ];
+  
+  function drawBackground() {
+    const grad = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, Math.max(width, height));
+    grad.addColorStop(0, '#ffffff');
+    grad.addColorStop(1, '#faf6ee');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, width, height);
+  }
+  
+  function loop() {
+    drawBackground();
+    waves.forEach(w => {
+      w.update();
+      w.draw(ctx, width, height);
+    });
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();

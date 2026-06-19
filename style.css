@@ -27,8 +27,7 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
-  background-color: var(--bg-dark-matte);
-  background-image: radial-gradient(circle at 50% 50%, #ffffff 0%, #faf6ee 100%);
+  background-color: transparent;
   font-family: var(--font-body);
   color: var(--text-gray);
   max-width:480px;
@@ -40,6 +39,16 @@ body {
 }
 body.no-scroll {
   overflow: hidden;
+}
+
+/* Background Canvas Live Wallpaper */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  pointer-events: none;
 }
 
 /* Texture & Ambient Noise Overlay */
