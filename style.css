@@ -1,6 +1,6 @@
 :root {
   /* Premium White & Gold Design System */
-  --bg-dark-matte: #faf9f6;
+  --bg-dark-matte: #faf6ee;
   --bg-dark-card: #ffffff;
   
   --gold-primary: #af925d;
@@ -8,7 +8,7 @@
   --gold-light: #ebd6a4;
   --gold-soft: rgba(175, 146, 93, 0.08);
   --gold-glow: rgba(175, 146, 93, 0.22);
-
+  
   --text-white: #1a1a19;
   --text-gray: #3a3834;
   --text-gold: #af925d;
@@ -25,7 +25,7 @@
 html { scroll-behavior:smooth; }
 body {
   background-color: var(--bg-dark-matte);
-  background-image: radial-gradient(circle at 50% 50%, #ffffff 0%, #faf9f6 100%);
+  background-image: radial-gradient(circle at 50% 50%, #ffffff 0%, #faf6ee 100%);
   font-family: var(--font-body);
   color: var(--text-gray);
   max-width:480px;
@@ -100,11 +100,11 @@ body::before {
 #hero {
   position: relative;
   background: transparent;
-  padding: 5.5rem 1rem 3rem;
+  padding: 6.5rem 1rem 3.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.2rem;
+  justify-content: center;
 }
 
 /* Hanging Lanterns */
@@ -164,149 +164,47 @@ body::before {
   60% { transform: scale(0.9); opacity: 0.45; }
 }
 
-/* Quranic Ayah Header */
-.quran-header {
-  width: 100%;
-  max-width: 380px;
+/* Hero Welcome Names */
+.hero-welcome-names {
   text-align: center;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   z-index: 10;
+  margin-top: 1rem;
 }
 
-.bismillah {
-  font-family: var(--font-arabic);
-  font-size: 1.85rem;
+.hero-title-cursive {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.8rem;
+  font-weight: 400;
   color: var(--gold-primary);
-  margin-bottom: 0.6rem;
-  line-height: 1.2;
+  line-height: 1.1;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 0.2rem;
 }
 
-.ayah-text {
-  font-family: var(--font-display);
-  font-size: 0.92rem;
-  font-style: italic;
-  color: var(--text-gray);
-  line-height: 1.7;
-  margin: 0 auto 0.5rem;
-  max-width: 320px;
-}
-
-.ayah-ref {
+.hero-subtitle-caps {
   font-family: var(--font-heading);
-  font-size: 0.58rem;
-  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+  letter-spacing: 0.32em;
   color: var(--gold-dark);
   text-transform: uppercase;
   font-weight: 600;
 }
 
-/* Pointed Arch Invitation Card */
-.pointed-arch-card {
-  position: relative;
-  width: 93%;
-  max-width: 390px;
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(175, 146, 93, 0.12), 0 5px 15px rgba(0, 0, 0, 0.03);
-  padding: 3.8rem 2.2rem 3.8rem;
-  margin: 0 auto;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.arch-border-svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.arch-content {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.card-names {
+/* Cursive Section Subheadings */
+.sec-script {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.9rem;
+  font-size: 2.3rem;
   font-weight: 400;
   color: var(--gold-primary);
-  margin: 0.4rem 0 1.2rem;
-  line-height: 1.25;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.02);
-  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.card-eyebrow {
-  font-family: var(--font-heading);
-  font-size: 0.55rem;
-  letter-spacing: 0.22em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.card-invite {
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: var(--text-gray);
-  margin-bottom: 1.2rem;
-}
-
-.card-gift-note {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  line-height: 1.6;
-  color: var(--text-muted);
-  margin-bottom: 1.8rem;
-  font-weight: 400;
-}
-
-.card-details-block {
-  width: 100%;
-  border-top: 1px solid rgba(175, 146, 93, 0.2);
-  border-bottom: 1px solid rgba(175, 146, 93, 0.2);
-  padding: 1.1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.card-date {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  color: var(--gold-primary);
-  font-weight: 600;
+  margin-top: 0.15rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
   letter-spacing: 0.02em;
-}
-
-.card-time-venue {
-  font-family: var(--font-heading);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  color: var(--text-gray);
-  font-weight: 600;
-  text-transform: uppercase;
+  display: block;
 }
 
 
@@ -449,102 +347,64 @@ body::before {
   background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
   opacity: 0.3;
 }
-.details-list {
-  position: relative;
-  margin: 1rem auto 0;
+.unified-details-card {
+  background: #ffffff;
+  border: 1px solid rgba(175, 146, 93, 0.22);
+  border-radius: 12px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 10px 30px rgba(175, 146, 93, 0.08);
   max-width: 380px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.3rem;
 }
-.details-item {
-  position: relative;
+.details-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.2rem;
-  background: var(--bg-dark-card);
-  border: 1px solid rgba(175, 146, 93, 0.18);
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: 0 4px 15px rgba(175, 146, 93, 0.05);
-  transition: transform 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium);
+  border-bottom: 1px dashed rgba(175, 146, 93, 0.15);
+  padding-bottom: 1rem;
 }
-.details-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(175, 146, 93, 0.12);
-  border-color: rgba(175, 146, 93, 0.35);
+.details-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 .details-icon-wrap {
   width: 38px;
   height: 38px;
   background: var(--gold-soft);
-  border: 1px solid rgba(175, 146, 93, 0.3);
+  border: 1px solid rgba(175, 146, 93, 0.25);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--gold-primary);
   flex-shrink: 0;
-  margin-top: 0.1rem;
 }
 .details-svg {
   width: 18px;
   height: 18px;
 }
-.details-content {
-  flex-grow: 1;
-}
-.details-label {
-  font-family: var(--font-heading);
-  font-size: 0.58rem;
-  letter-spacing: 0.15em;
-  color: var(--gold-primary);
-  margin-bottom: 0.35rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.details-title {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  color: var(--text-white);
-  font-weight: 500;
-  line-height: 1.35;
-}
-.details-desc {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  margin-top: 0.15rem;
-  line-height: 1.4;
-}
-.details-schedule-block {
+.details-text-wrap {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  margin-top: 0.2rem;
+  align-items: flex-start;
+  text-align: left;
 }
-.schedule-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px dashed rgba(175, 146, 93, 0.12);
-  padding-bottom: 0.3rem;
-}
-.schedule-row:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-.time-col {
+.details-row-label {
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
   color: var(--gold-dark);
-  font-weight: 600;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
 }
-.event-col {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
+.details-row-value {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.65rem;
   color: var(--text-gray);
-  font-weight: 500;
+  line-height: 1.1;
 }
 
 /* ══════════════════════════════════
@@ -565,49 +425,27 @@ body::before {
   background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
   opacity: 0.3;
 }
-.venue-card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(175, 146, 93, 0.35);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 12px 36px rgba(175, 146, 93, 0.15);
-  padding: 0;
-  max-width: 380px;
-  margin: 0 auto;
-}
-.venue-info {
-  padding: 1.25rem 1.5rem 1.1rem;
-  text-align: center;
-}
-.venue-info h3 {
+.venue-title-text {
   font-family: var(--font-display);
   font-size: 1.25rem;
   color: var(--gold-primary);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.4rem;
+  margin-top: 0.6rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
-.venue-address {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--text-gray);
-  line-height: 1.45;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0 0.5rem;
-}
-.pin-icon {
-  width: 15px;
-  height: 15px;
-  color: var(--gold-primary);
-  flex-shrink: 0;
+.venue-container-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(175, 146, 93, 0.22);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(175, 146, 93, 0.08);
+  max-width: 380px;
+  margin: 0 auto;
 }
 .map-box {
-  border-top: 1px solid rgba(175, 146, 93, 0.2);
-  border-bottom: 1px solid rgba(175, 146, 93, 0.2);
+  width: 100%;
   overflow: hidden;
 }
 .map-box iframe {
@@ -615,38 +453,36 @@ body::before {
   height: 240px;
   border: none;
   display: block;
-  filter: sepia(20%) brightness(0.98) contrast(1.02);
+  filter: sepia(10%) brightness(0.98) contrast(1.02);
   opacity: 0.9;
 }
-.venue-actions {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1.25rem;
+.venue-single-action {
+  padding: 1.1rem;
+  background: #ffffff;
 }
-.btn-venue-action {
-  flex: 1;
+.btn-venue-directions {
+  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  padding: 0.8rem 0.5rem;
+  padding: 0.85rem 1rem;
   font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.3s;
-}
-.btn-gold {
+  border-radius: 6px;
   background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
   color: #1a1a19;
   border: 1px solid var(--gold-primary);
+  box-shadow: 0 4px 15px rgba(175, 146, 93, 0.12);
+  transition: all 0.3s var(--ease-premium);
 }
-.btn-gold:hover {
+.btn-venue-directions:hover {
   background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
   color: #ffffff;
-  box-shadow: 0 4px 15px var(--gold-glow);
+  box-shadow: 0 6px 20px var(--gold-glow);
+  transform: translateY(-1px);
 }
 .btn-outline {
   background: transparent;
@@ -663,128 +499,138 @@ body::before {
 }
 
 /* ══════════════════════════════════
-   CLOSING
+   QURANIC AYAH (BELOW VENUE)
    ══════════════════════════════════ */
-#closing {
-  background: transparent;
-  padding: 3.5rem 1.6rem;
+#quran-ayah {
+  padding: 4rem 1.5rem 3rem;
   text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#closing::before {
+#quran-ayah::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 15%;
+  right: 15%;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-  opacity: 0.3;
+  opacity: 0.25;
 }
-.cl-bism {
+.bismillah-gold {
   font-family: var(--font-arabic);
-  font-size: 1.8rem;
+  font-size: 1.95rem;
   color: var(--gold-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
 }
-.cl-ayah {
-  font-family: var(--font-display);
-  font-size: 0.98rem;
-  font-style: italic;
+.ayah-script-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.75rem;
   color: var(--text-gray);
-  line-height: 1.85;
-  margin-bottom: 0.4rem;
-  padding: 0 0.4rem;
+  line-height: 1.45;
+  margin: 0 auto 0.8rem;
+  max-width: 340px;
 }
-.cl-cite {
+.ayah-script-ref {
   font-family: var(--font-heading);
   font-size: 0.58rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   color: var(--gold-dark);
-  margin-bottom: 1.8rem;
+  text-transform: uppercase;
   font-weight: 600;
 }
-.cl-arch {
-  margin: 1.5rem auto;
-  opacity: 0.8;
-  filter: drop-shadow(0 0 2px rgba(197, 168, 106, 0.2));
+
+/* ══════════════════════════════════
+   INVITATION TEXT (BELOW AYAH)
+   ══════════════════════════════════ */
+#invitation-text {
+  padding: 2.5rem 1.5rem 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
-.cl-script {
+.invite-arch-header {
+  width: 140px;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.invite-arch-header-svg {
+  width: 100%;
+  height: 35px;
+  display: block;
+}
+.invite-content-wrap {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.invite-names {
   font-family: 'Great Vibes', cursive;
   font-size: 3.5rem;
   font-weight: 400;
   color: var(--gold-primary);
-  margin-bottom: 0.3rem;
-  letter-spacing: 0.02em;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.6rem;
+  line-height: 1.1;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.02);
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
-.cl-amp {
-  color: var(--gold-light);
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-}
-.cl-sub {
+.invite-eyebrow {
   font-family: var(--font-heading);
   font-size: 0.58rem;
   letter-spacing: 0.24em;
   color: var(--gold-dark);
-  margin-bottom: 1rem;
-  font-weight: 600;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
 }
-.cl-body {
+.invite-main {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  line-height: 1.9;
-  margin: 1rem 0;
-}
-.cl-body strong {
-  font-style: normal;
-  color: var(--gold-primary);
-  font-weight: 500;
-}
-.dua-box {
-  border: 1px solid rgba(175, 146, 93, 0.3);
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 6px 20px rgba(175, 146, 93, 0.08);
-  padding: 1.5rem 1.2rem;
-  margin: 1.8rem auto 0;
-  max-width: 380px;
-  position: relative;
-  border-radius: 6px;
-}
-.dua-box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-}
-.dua-box::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-}
-.dua-box p {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.85;
   color: var(--text-gray);
-  line-height: 1.8;
+  margin-bottom: 1.4rem;
 }
-.dua-aameen {
-  display: block;
-  margin-top: 0.5rem;
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.2rem;
-  font-weight: 400;
+.invite-presence {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 2.2rem;
+}
+.invite-details-block {
+  width: 100%;
+  border-top: 1px solid rgba(175, 146, 93, 0.18);
+  border-bottom: 1px solid rgba(175, 146, 93, 0.18);
+  padding: 1.3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.invite-date {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
   color: var(--gold-primary);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.invite-time-venue {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--text-gray);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 /* ══════════════════════════════════
