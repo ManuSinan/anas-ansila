@@ -164,34 +164,24 @@ body::before {
   60% { transform: scale(0.9); opacity: 0.45; }
 }
 
-/* Hero Welcome Names */
-.hero-welcome-names {
-  text-align: center;
+/* Hero Welcome Image */
+.hero-welcome-image {
+  width: 93%;
+  max-width: 390px;
+  margin: 0.8rem auto 0;
   z-index: 10;
-  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-title-cursive {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3.8rem;
-  font-weight: 400;
-  color: var(--gold-primary);
-  line-height: 1.1;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
-  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  margin-bottom: 0.2rem;
-}
-
-.hero-subtitle-caps {
-  font-family: var(--font-heading);
-  font-size: 0.68rem;
-  letter-spacing: 0.32em;
-  color: var(--gold-dark);
-  text-transform: uppercase;
-  font-weight: 600;
+.hero-welcome-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(175, 146, 93, 0.25);
+  box-shadow: 0 12px 36px rgba(175, 146, 93, 0.15);
+  display: block;
 }
 
 /* Cursive Section Subheadings */
