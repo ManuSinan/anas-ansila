@@ -527,12 +527,14 @@ body::before {
   line-height: 1.2;
 }
 .ayah-script-text {
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.75rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.45rem;
+  font-style: italic;
+  font-weight: 500;
   color: var(--text-gray);
-  line-height: 1.45;
+  line-height: 1.6;
   margin: 0 auto 0.8rem;
-  max-width: 340px;
+  max-width: 320px;
 }
 .ayah-script-ref {
   font-family: var(--font-heading);
