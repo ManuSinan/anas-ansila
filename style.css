@@ -379,8 +379,8 @@ body::before {
   margin: 0.3rem 0;
 }
 .details-divider-svg {
-  width: 80px;
-  height: 18px;
+  width: 140px;
+  height: auto;
   display: block;
 }
 .details-icon-wrap {
