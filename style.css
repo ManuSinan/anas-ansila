@@ -788,166 +788,51 @@ body::before {
 }
 
 /* ══════════════════════════════════
-   RSVP SECTION
+   BLESSING CARD
    ══════════════════════════════════ */
-#rsvp {
+#blessing {
+  padding: 3rem 1.4rem;
   background: transparent;
-  padding: 3.5rem 1.4rem;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#rsvp::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-  opacity: 0.3;
-}
-.rsvp-card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(175, 146, 93, 0.35);
-  box-shadow: 0 12px 36px rgba(175, 146, 93, 0.15);
-  padding: 1.75rem 1.25rem;
-  border-radius: 8px;
+.blessing-card {
+  width: 100%;
   max-width: 380px;
-  margin: 0 auto;
-}
-.rsvp-card::before {
-  content: '';
-  position: absolute;
-  inset: 6px;
-  border: 0.5px solid rgba(175, 146, 93, 0.12);
-  pointer-events: none;
-  border-radius: 4px;
-}
-.rsvp-intro {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  background: #ffffff;
+  border: 1px solid rgba(175, 146, 93, 0.22);
+  border-radius: 12px;
+  padding: 2.5rem 1.8rem;
   text-align: center;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
+  box-shadow: 0 4px 15px rgba(175, 146, 93, 0.05);
 }
-.name-group {
-  margin-bottom: 1.25rem;
-}
-.input-icon-wrapper {
-  position: relative;
-  width: 100%;
-}
-.input-icon {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  color: var(--gold-primary);
-  pointer-events: none;
-}
-.input-icon-wrapper input {
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(175, 146, 93, 0.35);
-  border-radius: 4px;
-  padding: 0.85rem 1rem 0.85rem 2.6rem;
-  color: var(--text-white);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  outline: none;
-  transition: all 0.3s;
-}
-.input-icon-wrapper input:focus {
-  border-color: var(--gold-primary);
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 10px rgba(175, 146, 93, 0.15);
-}
-.rsvp-submit-actions {
-  display: flex;
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
-}
-.btn-rsvp-submit {
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.85rem 0.5rem;
-  font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.guest-selector-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid rgba(175, 146, 93, 0.25);
-  padding: 0.75rem 1rem;
-  border-radius: 4px;
-  background: rgba(250, 248, 245, 0.8);
-}
-.guest-selector-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-heading);
-  font-size: 0.62rem;
-  letter-spacing: 0.08em;
-  color: var(--gold-dark);
-  font-weight: 600;
-}
-.label-icon {
-  width: 14px;
-  height: 14px;
-  color: var(--gold-primary);
-}
-.selector-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-.ctrl-btn {
-  background: transparent;
-  border: none;
-  color: var(--gold-primary);
-  font-size: 1.1rem;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.2s;
-  outline: none;
-}
-.ctrl-btn:hover {
-  opacity: 0.7;
-}
-.ctrl-num {
+.blessing-text {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: var(--text-white);
-  font-weight: 600;
-  min-width: 24px;
-  text-align: center;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+.blessing-ameen {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--gold-primary);
+  margin-top: 1.2rem;
+  font-weight: 500;
 }
 
-/* FOOTER */
-footer {
-  background: transparent;
-  padding: 3.5rem 1rem 4rem;
+/* ══════════════════════════════════
+   MINIMAL FOOTER
+   ══════════════════════════════════ */
+.minimal-footer {
+  padding: 3.5rem 1.4rem 4rem;
   text-align: center;
   position: relative;
+  background: transparent;
 }
-footer::before {
+.minimal-footer::before {
   content: '';
   position: absolute;
   top: 0;
@@ -957,55 +842,31 @@ footer::before {
   background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
   opacity: 0.3;
 }
-.footer-badge {
-  width: 60px;
-  height: 60px;
-  border: 1.2px solid var(--gold-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  box-shadow: 0 4px 15px rgba(175, 146, 93, 0.15);
-  background: rgba(255, 255, 255, 0.85);
-}
-.footer-badge-inner {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: var(--gold-primary);
-  letter-spacing: 0.1em;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-  text-transform: uppercase;
-}
-.footer-badge-inner span {
-  font-size: 0.9rem;
-  opacity: 0.6;
-}
-.footer-thankyou {
+.footer-names {
   font-family: var(--font-heading);
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
-  color: var(--text-white);
-  margin-bottom: 0.8rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
   text-transform: uppercase;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
-.footer-heart {
+.footer-details {
+  font-family: var(--font-heading);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
   color: var(--gold-primary);
-  display: flex;
-  justify-content: center;
-  animation: heartBeat 1.5s infinite ease-in-out;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
-.heart-svg {
-  width: 12px;
-  height: 12px;
-}
-@keyframes heartBeat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.18); }
+.footer-venue {
+  font-family: var(--font-heading);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
 }
  
 /* ══════════════════════════════════

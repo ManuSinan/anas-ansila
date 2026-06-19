@@ -10,17 +10,7 @@ const bgAudio = document.getElementById("bg-audio");
 const musicToggle = document.getElementById("music-toggle");
 const musicIcon = document.getElementById("music-icon-playing");
 
-// Guest Selector
-const btnMinus = document.getElementById("btn-minus");
-const btnPlus = document.getElementById("btn-plus");
-const guestCountEl = document.getElementById("guest-count");
 
-// RSVP Submission Triggers
-const btnAcceptSubmit = document.getElementById("btn-accept-submit");
-const btnDeclineSubmit = document.getElementById("btn-decline-submit");
-
-const WHATSAPP_PHONE = "919645244441";
-let guestCount = 2;
 
 // 1. Splash Screen Curtain Video & Fading Names Transition (Tapping Screen)
 splash.addEventListener("click", () => {
@@ -84,64 +74,7 @@ if (musicToggle && bgAudio) {
   });
 }
 
-// 3. Guest Selector Controls
-if (btnMinus && btnPlus && guestCountEl) {
-  btnMinus.addEventListener("click", () => {
-    if (guestCount > 1) {
-      guestCount--;
-      guestCountEl.textContent = String(guestCount).padStart(2, "0");
-    }
-  });
 
-  btnPlus.addEventListener("click", () => {
-    if (guestCount < 10) {
-      guestCount++;
-      guestCountEl.textContent = String(guestCount).padStart(2, "0");
-    }
-  });
-}
-
-// 4. RSVP Form Submission via WhatsApp
-function sendRSVP(attendance) {
-  const nameInput = document.getElementById("rsvp-name");
-  if (!nameInput) return;
-  const name = nameInput.value.trim();
-
-  if (!name) {
-    alert("Please enter your name first.");
-    nameInput.focus();
-    return;
-  }
-
-  const statusIcon = attendance === "Joyfully Accepts" ? "🎉" : "✉️";
-  const guestPlural = guestCount === 1 ? "person" : "people";
-
-  let text = "";
-  if (attendance === "Joyfully Accepts") {
-    text = `Assalamu Alaikum! I would like to RSVP for Anas & Ansila's wedding on July 9, 2026.\n\n` +
-           `*Name:* ${name}\n` +
-           `*Attendance:* ${statusIcon} Joyfully Accepts\n` +
-           `*Guests:* ${guestCount} ${guestPlural}\n\n` +
-           `Looking forward to celebrating this blessed union!`;
-  } else {
-    text = `Assalamu Alaikum! I would like to RSVP for Anas & Ansila's wedding on July 9, 2026.\n\n` +
-           `*Name:* ${name}\n` +
-           `*Attendance:* ${statusIcon} Regretfully Declines\n\n` +
-           `Sending you warm blessings and prayers!`;
-  }
-
-  const encodedText = encodeURIComponent(text);
-  const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedText}`;
-
-  window.open(whatsappUrl, "_blank");
-}
-
-if (btnAcceptSubmit) {
-  btnAcceptSubmit.addEventListener("click", () => sendRSVP("Joyfully Accepts"));
-}
-if (btnDeclineSubmit) {
-  btnDeclineSubmit.addEventListener("click", () => sendRSVP("Regretfully Declines"));
-}
 
 /* ══ Countdown timer ══ */
 const wedding = new Date('2026-07-09T11:30:00+05:30'); // Thursday, July 9, 2026 at 11:30 AM IST
