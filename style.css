@@ -62,49 +62,6 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* ══════════════════════════════════
-   FLOATING CONTROLS
-   ══════════════════════════════════ */
-.nav-controls {
-  position: absolute;
-  top: 1.5rem;
-  left: 0;
-  right: 0;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  z-index: 100;
-  pointer-events: none;
-}
-.nav-btn {
-  pointer-events: auto;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(175, 146, 93, 0.45);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: var(--gold-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s var(--ease-premium);
-  box-shadow: 0 4px 12px rgba(175, 146, 93, 0.15);
-  outline: none;
-}
-.nav-btn:hover {
-  background: var(--gold-primary);
-  color: #ffffff;
-  box-shadow: 0 4px 15px var(--gold-glow);
-}
-.music-icon.animate-spin {
-  animation: musicSpin 8s linear infinite;
-}
-@keyframes musicSpin {
-  100% { transform: rotate(360deg); }
-}
 
 /* ══════════════════════════════════
    HERO — Pointed Arch Invite Card
