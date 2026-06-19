@@ -100,10 +100,11 @@ body::before {
 #hero {
   position: relative;
   background: transparent;
-  padding: 5.5rem 0.5rem 2rem;
+  padding: 5.5rem 1rem 3rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 2.2rem;
 }
 
 /* Hanging Lanterns */
@@ -163,150 +164,149 @@ body::before {
   60% { transform: scale(0.9); opacity: 0.45; }
 }
 
-/* Invitation Card Image Container */
-.hero-card-image-wrap {
+/* Quranic Ayah Header */
+.quran-header {
   width: 100%;
-  max-width: 100%; /* screenfit card size with no empty side space */
+  max-width: 380px;
+  text-align: center;
   margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   z-index: 10;
 }
-.hero-card-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 12px 36px rgba(175, 146, 93, 0.22);
-  border: 1px solid rgba(175, 146, 93, 0.25);
-  display: block;
+
+.bismillah {
+  font-family: var(--font-arabic);
+  font-size: 1.85rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
 }
+
+.ayah-text {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--text-gray);
+  line-height: 1.7;
+  margin: 0 auto 0.5rem;
+  max-width: 320px;
+}
+
+.ayah-ref {
+  font-family: var(--font-heading);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Pointed Arch Invitation Card */
+.pointed-arch-card {
+  position: relative;
+  width: 93%;
+  max-width: 390px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(175, 146, 93, 0.12), 0 5px 15px rgba(0, 0, 0, 0.03);
+  padding: 3.8rem 2.2rem 3.8rem;
+  margin: 0 auto;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .arch-border-svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 2;
 }
 
-.hero-eyebrow {
-  font-family: var(--font-heading);
-  font-size: 0.55rem;
-  letter-spacing: 0.25em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-top: 1rem;
-  font-weight: 500;
-}
-
-.hero-names-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1.25rem 0 0.8rem;
-  width: 100%;
-}
-.hero-name-text {
-  font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-weight: 400;
-  letter-spacing: 0.16em;
-  margin-right: -0.16em;
-  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  text-transform: uppercase;
-  line-height: 1.1;
-  filter: drop-shadow(0px 1px 2px rgba(175, 146, 93, 0.25));
-}
-.hero-amp-container {
-  width: 100px;
-  height: auto;
-  margin: 0.2rem auto;
-}
-.hero-amp-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.hero-subtitle {
-  font-family: var(--font-heading);
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  line-height: 1.7;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  font-weight: 500;
-  margin: 0.8rem 0;
-}
-
-/* Date Badge Card */
-.hero-date-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid rgba(175, 146, 93, 0.35);
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1.1rem 0.6rem;
-  width: 100%;
-  margin-top: 2rem;
-  border-radius: 4px;
+.arch-content {
   position: relative;
-  box-shadow: 0 8px 24px rgba(175, 146, 93, 0.12);
-}
-.hero-date-card::before {
-  content: '';
-  position: absolute;
-  inset: 4px;
-  border: 0.5px solid rgba(175, 146, 93, 0.12);
-  pointer-events: none;
-  border-radius: 2px;
-}
-.badge-col {
-  flex: 1;
+  z-index: 5;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.3rem;
 }
-.badge-col.divider-left {
-  border-left: 1px solid rgba(197, 168, 106, 0.2);
-}
-.badge-icon {
-  width: 15px;
-  height: 15px;
+
+.card-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.9rem;
+  font-weight: 400;
   color: var(--gold-primary);
+  margin: 0.4rem 0 1.2rem;
+  line-height: 1.25;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.02);
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
-.badge-label {
+
+.card-eyebrow {
   font-family: var(--font-heading);
-  font-size: 0.5rem;
-  letter-spacing: 0.08em;
-  color: var(--text-white);
-  font-weight: 600;
-}
-.date-num {
-  font-family: var(--font-display);
-  font-size: 1.85rem;
-  color: var(--gold-primary);
-  font-weight: 500;
-  line-height: 1;
-}
-.date-month {
-  font-family: var(--font-heading);
-  font-size: 0.52rem;
-  letter-spacing: 0.08em;
-  color: var(--text-white);
-  font-weight: 700;
-}
-.date-year {
-  font-family: var(--font-heading);
-  font-size: 0.42rem;
-  letter-spacing: 0.05em;
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
   color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-invite {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-gray);
+  margin-bottom: 1.2rem;
+}
+
+.card-gift-note {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 1.8rem;
+  font-weight: 400;
+}
+
+.card-details-block {
+  width: 100%;
+  border-top: 1px solid rgba(175, 146, 93, 0.2);
+  border-bottom: 1px solid rgba(175, 146, 93, 0.2);
+  padding: 1.1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.card-date {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--gold-primary);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.card-time-venue {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--text-gray);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 
@@ -827,43 +827,59 @@ body::before {
    MINIMAL FOOTER
    ══════════════════════════════════ */
 .minimal-footer {
-  padding: 3.5rem 1.4rem 4rem;
+  padding: 4rem 1.5rem;
   text-align: center;
   position: relative;
-  background: transparent;
+  background: rgba(175, 146, 93, 0.03);
+  border-top: 1px solid rgba(175, 146, 93, 0.15);
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
 }
-.minimal-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-  opacity: 0.3;
+
+.footer-ornament {
+  margin-bottom: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.footer-heart-svg {
+  width: 20px;
+  height: 20px;
+  color: var(--gold-primary);
+  fill: rgba(175, 146, 93, 0.08);
+  animation: footerHeartBeat 2s infinite ease-in-out;
+}
+
+@keyframes footerHeartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
 .footer-names {
-  font-family: var(--font-heading);
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.2rem;
+  line-height: 1;
 }
+
 .footer-details {
   font-family: var(--font-heading);
-  font-size: 0.55rem;
-  letter-spacing: 0.18em;
-  color: var(--gold-primary);
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  color: var(--text-white);
   text-transform: uppercase;
   font-weight: 700;
-  margin-bottom: 0.4rem;
 }
+
 .footer-venue {
   font-family: var(--font-heading);
-  font-size: 0.55rem;
-  letter-spacing: 0.12em;
+  font-size: 0.52rem;
+  letter-spacing: 0.15em;
   color: var(--text-muted);
   text-transform: uppercase;
   font-weight: 600;
