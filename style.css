@@ -567,28 +567,30 @@ body::before {
 }
 .invite-arch-header-svg {
   width: 100%;
-  height: 30px;
+  height: 18px;
   display: block;
 }
 .invite-content-wrap {
   width: 100%;
   max-width: 380px;
-  background: #ffffff;
-  border: 1px solid rgba(175, 146, 93, 0.22);
-  border-radius: 12px;
-  padding: 2.8rem 1.8rem;
-  box-shadow: 0 10px 30px rgba(175, 146, 93, 0.08);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 1.5rem 0;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .invite-names {
-  font-family: var(--font-highlight);
-  font-size: 3.2rem;
-  font-weight: 400;
+  font-family: var(--font-content);
+  font-style: normal;
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--gold-primary);
-  margin-bottom: 1.2rem;
-  line-height: 1.1;
+  margin-bottom: 1rem;
+  line-height: 1.2;
   text-shadow: 0 1px 1px rgba(0,0,0,0.02);
   background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
   -webkit-background-clip: text;
