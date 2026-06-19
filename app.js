@@ -132,49 +132,63 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   window.addEventListener('resize', resize);
   resize();
   
-  class WaveLayer {
-    constructor(yPercent, length, amplitude, speed, colors) {
-      this.yPercent = yPercent;
-      this.length = length;
-      this.amplitude = amplitude;
-      this.speed = speed;
-      this.colors = colors;
-      this.phase = Math.random() * 100;
+  class GoldParticle {
+    constructor() {
+      this.reset(true);
+    }
+    
+    reset(init = false) {
+      this.x = Math.random() * width;
+      this.y = init ? Math.random() * height : height + 10;
+      this.size = Math.random() * 3 + 1; // 1px to 4px
+      this.speedY = -(Math.random() * 0.4 + 0.15); // Very slow drift
+      this.speedX = Math.random() * 0.2 - 0.1;
+      this.maxOpacity = Math.random() * 0.35 + 0.15;
+      this.opacity = init ? Math.random() * this.maxOpacity : 0;
+      this.fadeSpeed = Math.random() * 0.005 + 0.002;
+      this.fadingIn = true;
     }
     
     update() {
-      this.phase += this.speed;
-    }
-    
-    draw(ctx, w, h) {
-      const centerY = h * this.yPercent;
-      ctx.beginPath();
-      ctx.moveTo(0, h);
+      this.y += this.speedY;
+      this.x += this.speedX;
       
-      for (let x = 0; x <= w; x += 4) {
-        const angle = x * this.length + this.phase;
-        const y = centerY + Math.sin(angle) * this.amplitude + Math.cos(angle * 0.6) * (this.amplitude * 0.4);
-        ctx.lineTo(x, y);
+      // Floating sinusoidal motion
+      this.x += Math.sin(this.y * 0.01) * 0.05;
+      
+      if (this.fadingIn) {
+        this.opacity += this.fadeSpeed;
+        if (this.opacity >= this.maxOpacity) {
+          this.opacity = this.maxOpacity;
+          this.fadingIn = false;
+        }
+      } else {
+        if (this.y < height * 0.2) {
+          this.opacity -= this.fadeSpeed * 1.5;
+        }
       }
       
-      ctx.lineTo(w, h);
-      ctx.lineTo(0, h);
-      ctx.closePath();
-      
-      const grad = ctx.createLinearGradient(0, centerY - this.amplitude * 1.5, 0, h);
-      grad.addColorStop(0, this.colors[0]);
-      grad.addColorStop(1, this.colors[1]);
+      if (this.y < -10 || this.opacity <= 0 || this.x < -10 || this.x > width + 10) {
+        this.reset(false);
+      }
+    }
+    
+    draw(ctx) {
+      if (this.opacity <= 0) return;
+      ctx.beginPath();
+      // Draw radial gold glow
+      const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 2);
+      grad.addColorStop(0, `rgba(212, 175, 55, ${this.opacity})`);
+      grad.addColorStop(0.3, `rgba(235, 214, 164, ${this.opacity * 0.6})`);
+      grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
       
       ctx.fillStyle = grad;
+      ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
       ctx.fill();
     }
   }
   
-  const waves = [
-    new WaveLayer(0.60, 0.003, 30, 0.006, ['rgba(235, 214, 164, 0.15)', 'rgba(250, 246, 238, 0.05)']),
-    new WaveLayer(0.70, 0.004, 24, 0.008, ['rgba(255, 255, 255, 0.4)', 'rgba(250, 246, 238, 0.1)']),
-    new WaveLayer(0.80, 0.005, 18, 0.010, ['rgba(175, 146, 93, 0.15)', 'rgba(235, 214, 164, 0.03)'])
-  ];
+  const particles = Array.from({ length: 35 }, () => new GoldParticle());
   
   function drawBackground() {
     const grad = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, Math.max(width, height));
@@ -186,9 +200,9 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   
   function loop() {
     drawBackground();
-    waves.forEach(w => {
-      w.update();
-      w.draw(ctx, width, height);
+    particles.forEach(p => {
+      p.update();
+      p.draw(ctx);
     });
     requestAnimationFrame(loop);
   }
