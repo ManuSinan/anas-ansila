@@ -45,6 +45,7 @@ splash.addEventListener("click", () => {
   // Wait for the names to be displayed, then fade out the splash screen (5.5s total)
   setTimeout(() => {
     splash.classList.add("fade-out");
+    document.body.classList.remove("splash-active");
     appContainer.classList.remove("hidden");
     setTimeout(() => {
       appContainer.classList.add("fade-in");
