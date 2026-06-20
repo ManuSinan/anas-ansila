@@ -135,21 +135,23 @@ body::before {
 
 /* Hero Welcome Image */
 .hero-welcome-image {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
+  width: 90%;
+  max-width: 430px;
+  margin: 1.5rem auto 1rem;
   z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 4px double var(--gold-primary);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(175, 146, 93, 0.18);
+  overflow: hidden;
 }
 
 .hero-welcome-img {
   width: 100%;
   height: auto;
   border: none;
-  border-radius: 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   display: block;
 }
 
