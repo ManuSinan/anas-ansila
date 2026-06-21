@@ -41,6 +41,9 @@
       align-items: center !important;
       text-align: center !important;
       overflow: hidden !important;
+      background-image: url('curtain-poster.jpg') !important;
+      background-size: cover !important;
+      background-position: center !important;
     }
     .video-container {
       position: absolute !important;
@@ -48,12 +51,16 @@
       width: 100% !important;
       height: 100% !important;
       z-index: 1 !important;
+      background-image: url('curtain-poster.jpg') !important;
+      background-size: cover !important;
+      background-position: center !important;
     }
     .video-container video {
       width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
-      opacity: 1 !important;
+      opacity: 0 !important;
+      transition: opacity 0.3s ease !important;
       background-color: #000000 !important;
     }
     .splash-content {
@@ -109,7 +116,7 @@
   <!-- Video Curtain Screen Overlay -->
   <div id="splash" class="splash-screen">
     <div class="video-container">
-      <video id="curtain-video" playsinline muted preload="auto">
+      <video id="curtain-video" playsinline muted preload="auto" poster="curtain-poster.jpg">
         <source src="curtain-video-BAKLj3Y5.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
