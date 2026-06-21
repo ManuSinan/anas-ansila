@@ -10,8 +10,6 @@ const bgAudio = document.getElementById("bg-audio");
 const musicToggle = document.getElementById("music-toggle");
 const musicIcon = document.getElementById("music-icon-playing");
 
-
-
 // 1. Splash Screen Curtain Video & Fading Names Transition (Tapping Screen)
 splash.addEventListener("click", () => {
   // Prevent double trigger of transition sequence

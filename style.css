@@ -727,7 +727,7 @@ body::before {
 .splash-screen {
   position: fixed;
   inset: 0;
-  background-color: #0c0b0a;
+  background-color: #000000;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -863,6 +863,7 @@ body::before {
   height: 100%;
   object-fit: cover;
   opacity: 1;
+  background-color: #000000 !important;
 }
 .hidden {
   display: none !important;
