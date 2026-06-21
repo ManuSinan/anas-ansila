@@ -26,7 +26,73 @@
   <link rel="stylesheet" href="style.css">
   <style>
     .hidden { display: none !important; }
-    body.splash-active { background-color: #0c0b0a !important; }
+    body.splash-active {
+      background-color: #0c0b0a !important;
+      overflow: hidden !important;
+    }
+    /* Inline styles to prevent flashes of unstyled content (FOUC) before style.css loads */
+    .splash-screen {
+      position: fixed !important;
+      inset: 0 !important;
+      background-color: #0c0b0a !important;
+      z-index: 9999 !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      text-align: center !important;
+      overflow: hidden !important;
+    }
+    .video-container {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 1 !important;
+    }
+    .video-container video {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      opacity: 1 !important;
+    }
+    .splash-content {
+      position: relative !important;
+      z-index: 2 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      width: 100% !important;
+      max-width: 320px !important;
+      padding: 0 1rem !important;
+    }
+    .splash-names-fade {
+      opacity: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      width: 100% !important;
+    }
+    .splash-names-fade.show {
+      opacity: 1 !important;
+    }
+    .splash-tap-hint {
+      position: absolute !important;
+      bottom: 30px !important;
+      left: 50% !important;
+      transform: translate(-50%, 0) !important;
+      text-align: center !important;
+      z-index: 3 !important;
+      width: 100% !important;
+    }
+    #bg-canvas {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: -2 !important;
+      pointer-events: none !important;
+    }
   </style>
 </head>
 <body class="no-scroll splash-active">
