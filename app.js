@@ -10,19 +10,6 @@ const bgAudio = document.getElementById("bg-audio");
 const musicToggle = document.getElementById("music-toggle");
 const musicIcon = document.getElementById("music-icon-playing");
 
-// Hide video initially to prevent Safari green flash, and fade it in when playback starts
-if (curtainVideo) {
-  const revealVideo = () => {
-    curtainVideo.style.opacity = "1";
-  };
-  curtainVideo.addEventListener("playing", revealVideo);
-  curtainVideo.addEventListener("timeupdate", () => {
-    if (curtainVideo.currentTime > 0) {
-      revealVideo();
-    }
-  });
-}
-
 // 1. Splash Screen Curtain Video & Fading Names Transition (Tapping Screen)
 splash.addEventListener("click", () => {
   // Prevent double trigger of transition sequence
@@ -44,10 +31,6 @@ splash.addEventListener("click", () => {
   // Start playing the curtain video
   if (curtainVideo) {
     curtainVideo.play();
-    // Fallback fade-in after 150ms to ensure video transitions even if events are throttled
-    setTimeout(() => {
-      curtainVideo.style.opacity = "1";
-    }, 150);
   }
 
   // Fade in names overlay ONLY after the curtain has completely opened (2.2 seconds)
